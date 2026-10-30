@@ -1045,8 +1045,7 @@ function processPath(W0, fix = true) {
   let top = 0; for (let i = 0; i < W.length - 1; i++) top = Math.max(top, W[i].y);
   if (top < NET_H) return { err: 'errHigh' };
   let c = netCross(W); if (!c) return { err: 'errOwn' };
-  if (Math.abs(c.x) > NW - BR) return { err: 'errAnt' };
-  if (c.y < NTOP + .05) {
+  if (c.y < NTOP + .05 && Math.abs(c.x) <= CW + .6) { // アンテナの外を通るのもOK。ネットのある所で低いときだけ持ち上げる
     const s = arcLens(W, d3), L = s[s.length - 1] || 1, uc = s[c.i] / L, amp = (NTOP + .15 - c.y) / Math.max(.3, Math.sin(Math.PI * uc));
     for (let i = 1; i < W.length - 1; i++) W[i].y += amp * Math.sin(Math.PI * s[i] / L);
     c = netCross(W);
