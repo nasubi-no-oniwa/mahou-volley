@@ -784,7 +784,7 @@ function readyPose() {
   for (const a of P.arms) { a.sh.rotation.set(-.9, 0, a.sd * -.25); a.el.rotation.set(-.2, 0, 0); }
 }
 keeperReady();
-const RUN_V = 6.2, DIVE_V = 8.5, DIVE_T = .42, DIVE_REC = .55;
+const RUN_V = 6.2, DIVE_V = 7.6, DIVE_T = .42, DIVE_REC = .6;
 // 指の動き（ぷにコン）から走る。stick は画面での向き（-1..1）
 function keeperStep(dt, stick) {
   const P = keeper;
@@ -794,7 +794,7 @@ function keeperStep(dt, stick) {
     RV.p.addScaledVector(RV.dir, mv * dt);
     RV.p.x = clamp(RV.p.x, -CW - 3, CW + 3); RV.p.z = clamp(RV.p.z, -CL - 3, -.4);
     const e = t < .16 ? ease(t / .16) : t < DIVE_T + DIVE_REC * .4 ? 1 : Math.max(0, 1 - (t - DIVE_T - DIVE_REC * .4) / (DIVE_REC * .6));
-    resetPose(P); P.G.position.set(RV.p.x, .12 * e, RV.p.z);
+    resetPose(P); P.G.position.set(RV.p.x - RV.dir.x * .85 * e, .12 * e, RV.p.z - RV.dir.z * .85 * e); // 体のまん中が、飛んだ先に来るように
     P.G.rotation.set(Math.PI / 2 * .92 * e, Math.atan2(RV.dir.x, RV.dir.z), 0);
     for (const a of P.arms) { a.sh.rotation.set(lerp(-.9, -3.0, e), 0, a.sd * .12); a.el.rotation.set(0, 0, 0); }
     for (const l of P.legs) { l.hip.rotation.x = lerp(-.55, .1, e); l.knee.rotation.x = lerp(1, .2, e); }
@@ -821,10 +821,11 @@ function segDist(p, a, b) { const ab = b.clone().sub(a), t = clamp(p.clone().sub
 function keeperHit(p) {
   const P = keeper; P.G.updateMatrixWorld(true);
   P.arms[0].hand.getWorldPosition(_kw[0]); P.arms[1].hand.getWorldPosition(_kw[1]); P.head.getWorldPosition(_kw[2]); P.hips.getWorldPosition(_kw[3]);
-  const foot = V3(); P.legs[0].knee.getWorldPosition(foot); foot.lerp(_kw[3], -.6);
+  const k0 = V3(), k1 = V3(); P.legs[0].knee.getWorldPosition(k0); P.legs[1].knee.getWorldPosition(k1);
+  const f0 = k0.clone().lerp(_kw[3], -.9), f1 = k1.clone().lerp(_kw[3], -.9); // 足の先まで
   const r = BR + .26;
   if (segDist(p, _kw[3], _kw[2]) < r + .06) return true;
-  if (segDist(p, _kw[3], foot) < r) return true;
+  if (segDist(p, _kw[3], f0) < r || segDist(p, _kw[3], f1) < r) return true;
   if (segDist(p, _kw[2], _kw[0]) < r - .05 || segDist(p, _kw[2], _kw[1]) < r - .05) return true;
   return false;
 }
