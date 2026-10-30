@@ -348,7 +348,7 @@ const TX = {
     spN0: '無回転', spN1: 'ドライブ', spN2: '左回転', spN3: '右回転',
     edHint: 'ボールから、ピンクの印（落ちる所）まで線を引く。ネットはこえるように', edDrawn: '「上から見る」「横から見る」で曲がりや高さも変えられます。サーブ・高さ・回転・球速を選んで、試し打ちで確かめよう',
     errStart: 'ボールから描きはじめてね', errZone: '最後は相手のコートの床まで描いてね', errInk: '線がもう伸ばせません。ここで止めてね', errShort: 'もう少し長く描いてね',
-    errOwn: '自分のコートに落ちた。ネットをこえて相手のコートへ', errOut: 'アウト。相手のコートの線の中に落としてね', errAnt: 'アンテナの外。ネットの左右のはしより内側を通してね', errNet: 'ネットにかかった。ネットより高く通してね',
+    errOwn: '自分のコートに落ちた。ネットをこえて相手のコートへ', errOut: 'アウト。最後は相手のコートにふれるように', errAnt: 'アンテナの外。ネットの左右のはしより内側を通してね', errHigh: '一度はネットより高く上げてね', errNet: 'ネットにかかった。ネットより高く通してね',
     viewP: 'サーブする側から', viewB: '受ける側から', tapSkip: 'タップで飛ばす',
     regTitle: '魔球に名前をつける', namePh: '魔球の名前（16文字まで）', regSend: '登録',
     needName: '名前を入れてね', badName: 'その名前は使えません', sending: '登録中…', regWait: '少し待ってからもう一度押してね', regFail: '登録できませんでした。通信を確かめてね',
@@ -385,7 +385,7 @@ const TX = {
     spN0: 'No spin (float)', spN1: 'Topspin', spN2: 'Left spin', spN3: 'Right spin',
     edHint: 'Draw from the ball to the pink mark (landing spot), over the net', edDrawn: 'Use "From above" / "From the side" to change the curve or height. Pick the serve, height, spin and speed, then test it',
     errStart: 'Start drawing from the ball', errZone: 'Draw all the way down to the floor of their court', errInk: "The line can't go any longer. Stop here", errShort: 'Draw a little longer',
-    errOwn: 'It landed on your side. Get it over the net', errOut: 'Out. Land it inside the lines of their court', errAnt: 'Outside the antenna. Pass between the ends of the net', errNet: 'It hit the net. Go higher over it',
+    errOwn: 'It landed on your side. Get it over the net', errOut: 'Out. Land it inside the lines of their court', errAnt: 'Outside the antenna. Pass between the ends of the net', errHigh: 'Get it higher than the net at least once', errNet: 'It hit the net. Go higher over it',
     viewP: 'Server view', viewB: 'Receiver view', tapSkip: 'Tap to skip',
     regTitle: 'Name your magic serve', namePh: 'Serve name (up to 16)', regSend: 'Save',
     needName: 'Enter a name', badName: "That name can't be used", sending: 'Saving…', regWait: 'Wait a moment and try again', regFail: "Couldn't save. Check your connection",
@@ -422,7 +422,7 @@ const TX = {
     spN0: '不轉（飄球）', spN1: '上旋', spN2: '左旋', spN3: '右旋',
     edHint: '從球畫線到粉紅色記號（落點），要越過球網', edDrawn: '用「從上面看」「從側面看」也能改轉彎和高度。選好發球、高度、旋轉和球速，試發確認吧',
     errStart: '請從球開始畫', errZone: '最後請畫到對方場地的地板', errInk: '線已經不能再延長了，請在這裡停下', errShort: '再畫長一點吧',
-    errOwn: '落在自己這邊了。請越過球網打到對方場地', errOut: '出界。請落在對方場地的線內', errAnt: '標誌桿外。請從球網兩端的內側通過', errNet: '掛網了。請從網子上方通過',
+    errOwn: '落在自己這邊了。請越過球網打到對方場地', errOut: '出界。請落在對方場地的線內', errAnt: '標誌桿外。請從球網兩端的內側通過', errHigh: '至少要有一次比球網還高', errNet: '掛網了。請從網子上方通過',
     viewP: '發球方視角', viewB: '接球方視角', tapSkip: '點一下略過',
     regTitle: '為魔球取名', namePh: '魔球名稱（最多16字）', regSend: '登錄',
     needName: '請輸入名稱', badName: '這個名稱不能使用', sending: '登錄中…', regWait: '請稍等一下再按一次', regFail: '無法登錄，請確認網路',
@@ -459,7 +459,7 @@ const TX = {
     spN0: '무회전', spN1: '드라이브', spN2: '왼쪽 회전', spN3: '오른쪽 회전',
     edHint: '공에서 분홍 표시(떨어지는 곳)까지 선을 그어라. 네트는 넘기게', edDrawn: '「위에서 보기」「옆에서 보기」로 휘는 모양이나 높이도 바꿀 수 있어요. 서브・높이・회전・구속을 고르고 시험 서브로 확인하자',
     errStart: '공에서부터 그리기 시작해 줘', errZone: '마지막은 상대 코트 바닥까지 그려 줘', errInk: '선을 더는 늘릴 수 없어요. 여기서 멈춰 줘', errShort: '조금 더 길게 그려 줘',
-    errOwn: '내 코트에 떨어졌다. 네트를 넘겨 상대 코트로', errOut: '아웃. 상대 코트의 선 안에 떨어뜨려 줘', errAnt: '안테나 밖. 네트 양 끝보다 안쪽으로 지나가게 해 줘', errNet: '네트에 걸렸다. 네트보다 높이 지나가게 해 줘',
+    errOwn: '내 코트에 떨어졌다. 네트를 넘겨 상대 코트로', errOut: '아웃. 상대 코트의 선 안에 떨어뜨려 줘', errAnt: '안테나 밖. 네트 양 끝보다 안쪽으로 지나가게 해 줘', errHigh: '한 번은 네트보다 높이 올려 줘', errNet: '네트에 걸렸다. 네트보다 높이 지나가게 해 줘',
     viewP: '서브하는 쪽에서', viewB: '받는 쪽에서', tapSkip: '탭해서 건너뛰기',
     regTitle: '마구에 이름 붙이기', namePh: '마구 이름(16자까지)', regSend: '등록',
     needName: '이름을 넣어 줘', badName: '그 이름은 쓸 수 없어요', sending: '등록 중…', regWait: '잠시 후 다시 눌러 줘', regFail: '등록하지 못했어요. 통신을 확인해 줘',
@@ -1034,34 +1034,32 @@ function netCross(W) {
   for (let i = 1; i < W.length; i++) { const p = W[i - 1], q = W[i]; if (p.z >= NZ && q.z < NZ) { const u = (NZ - p.z) / ((q.z - p.z) || -1e-6); return { i, y: lerp(p.y, q.y, u), x: lerp(p.x, q.x, u) }; } }
   return null;
 }
-// 線を調べる。最初に床にふれた所が「落ちる所」。ネットをこえて、相手のコートに落ちていなければ err
-function processPath(W0, fix = false) {
-  let W = W0.map(p => V3(p.x, Math.max(FY, p.y), clamp(p.z, -CL - 3, R0.z + .5)));
-  for (let i = 1; i < W.length - 1; i++) if (W[i].y <= FY + .08 && W[i].y <= W[i - 1].y && W[i].y <= W[i + 1].y) W[i].y = FY; // 床のすぐ近くの谷は、床にふれたことに
-  let land = -1; for (let i = 1; i < W.length; i++) if (W[i].y <= FY + .002) { land = i; break; }
-  if (land < 0) return { err: 'errZone' };
-  W = W.slice(0, land + 1); W[land].y = FY;
-  const end = W[land];
+// 線を調べる。最後が相手のコートにふれていて、一度はネットより高く上がっていればOK。
+// ネットの所で低すぎるときは、山を高くしてこえさせる
+function processPath(W0, fix = true) {
+  const W = W0.map(p => V3(p.x, Math.max(FY, p.y), clamp(p.z, -CL - 3, R0.z + .5)));
+  const end = W[W.length - 1]; end.y = FY;
   if (end.z > NZ) return { err: 'errOwn' };
-  if (!inCourt(end)) return { err: 'errOut' };
+  if (!inCourt(end, .06)) return { err: 'errOut' };
+  let top = 0; for (let i = 0; i < W.length - 1; i++) top = Math.max(top, W[i].y);
+  if (top < NET_H) return { err: 'errHigh' };
   let c = netCross(W); if (!c) return { err: 'errOwn' };
-  const netOk = c => c.y >= NTOP && Math.abs(c.x) <= NW - BR;
-  if (!netOk(c) && fix && Math.abs(c.x) <= NW - BR && NTOP - c.y < 1.4) { // 少し足りないくらいなら、山を高くしてこえさせる
-    const s = arcLens(W, d3), L = s[s.length - 1] || 1, uc = s[c.i] / L, amp = (NTOP + .12 - c.y) / Math.max(.3, Math.sin(Math.PI * uc));
+  if (Math.abs(c.x) > NW - BR) return { err: 'errAnt' };
+  if (c.y < NTOP + .05) {
+    const s = arcLens(W, d3), L = s[s.length - 1] || 1, uc = s[c.i] / L, amp = (NTOP + .15 - c.y) / Math.max(.3, Math.sin(Math.PI * uc));
     for (let i = 1; i < W.length - 1; i++) W[i].y += amp * Math.sin(Math.PI * s[i] / L);
     c = netCross(W);
   }
-  if (!netOk(c)) return { err: Math.abs(c.x) > NW - BR ? 'errAnt' : 'errNet' };
-  end.x = clamp(end.x, -CW, CW); end.z = clamp(end.z, -CL, 0);
-  const out = resample(W, .2), ni = netCross(out).i;
-  return { W: out, ni };
+  end.x = clamp(end.x, -CW - .06, CW + .06); end.z = clamp(end.z, -CL - .06, -.05);
+  const out = resample(W, .2); out[out.length - 1].y = FY;
+  return { W: out, ni: netCross(out).i };
 }
 function encode(W) { return W.map(p => [p.x, p.y, p.z].map(v => Math.round(v * 100)).join(',')).join(';'); }
 function decode(str) {
   if (typeof str !== 'string' || str.length > 8000) return null;
   const W = str.split(';').map(t => { const a = t.split(',').map(Number); return a.length === 3 && a.every(Number.isFinite) ? V3(a[0] / 100, a[1] / 100, a[2] / 100) : null; });
   if (W.length < 4 || W.some(p => !p)) return null;
-  if (W[0].distanceTo(R0) > .06) return null;
+  if (W[0].distanceTo(R0) > .08) return null;
   if (len3(W) > CAP * 1.05) return null;
   W[0].copy(R0);
   const r = processPath(W);
@@ -1640,7 +1638,7 @@ $('#doneCopy').onclick = async () => {
   try { await navigator.clipboard.writeText(url); } catch (_) { const t = document.createElement('textarea'); t.value = url; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); } catch (_) { } t.remove(); }
   $('#doneCopy').textContent = tr('copied');
 };
-$('#doneBat').onclick = guard(() => { if (doneInfo) openBall(doneInfo.code, true); });
+$('#doneBat').onclick = guard(async () => { if (!doneInfo) return; const r = await openBall(doneInfo.code, true); if (r && r.err) { const n = $('#doneP .note'); n.textContent = r.err; n.className = 'note err'; } });
 $('#doneTitle').onclick = guard(() => toTitle());
 
 // 魔球を読みこむ
