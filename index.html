@@ -187,6 +187,7 @@ html[lang=en] .card h1 .pk{margin:.12em 0 0;font-size:.7em}
 @keyframes hand{0%,100%{transform:translate(0,0)}25%{transform:translate(-8px,-4px)}75%{transform:translate(8px,-4px)}}
 @media (prefers-reduced-motion:reduce){#pad .hand{animation:none}}
 @media (max-width:360px){.card{padding:20px 14px 14px}}
+@media (min-aspect-ratio:1/1) and (min-width:700px){#typeRow,#spinRow,#hRow,#spdRow{left:auto;right:14px;transform:none}}
 @media (prefers-reduced-motion:reduce){#flash{transition:none}}
 </style>
 </head>
@@ -949,10 +950,10 @@ function setCam(mode) {
     ortho.position.addScaledVector(right, (p.x - wantX) * hw).addScaledVector(up, (p.y - wantY) * hh);
     ortho.updateMatrixWorld(true);
   } else {
-    camera = persp; const c = CAMS[mode];
+    camera = persp; const c = mode === 'ed' && asp > 1 ? { pos: V3(.9, 9.5, SZ + 5.5), look: V3(0, 0, -3.5) } : CAMS[mode]; // 横長の画面では、高い所から
     persp.aspect = asp; persp.position.copy(c.pos); persp.up.set(0, 1, 0); persp.lookAt(c.look); persp.fov = camFov(mode); persp.clearViewOffset(); persp.updateProjectionMatrix(); persp.updateMatrixWorld(true);
     // 大事な物が、上の案内と下のボタンにかくれない所に入るように、画角とずれを決める
-    if (mode === 'ed') fitSafe([R0.clone().add(V3(-.4, -.6, 0)), R0.clone().add(V3(.4, .8, 0)), V3(-CW, 0, -CL), V3(CW, 0, -CL), V3(-CW, NET_H + .3, 0), V3(CW, NET_H + .3, 0), ...(asp > 1 ? [V3(-CW, 0, CL), V3(CW, 0, CL)] : [])], 150, 225, 'center');
+    if (mode === 'ed') fitSafe([R0.clone().add(V3(-.4, -.6, 0)), R0.clone().add(V3(.4, .8, 0)), V3(-CW, 0, -CL), V3(CW, 0, -CL), V3(-CW, NET_H + .3, 0), V3(CW, NET_H + .3, 0), ], 150, asp > 1 ? 80 : 225, 'center');
     if (mode === 'goal') fitSafe([V3(-CW - .3, 0, .3), V3(CW + .3, 0, .3), V3(-CW - .3, 0, -CL - .3), V3(CW + .3, 0, -CL - .3)], 140, 70, 'center');
     if (mode === 'bat') fitSafe([V3(-CW - .3, 0, -CL - .4), V3(CW + .3, 0, -CL - .4), V3(-CW, NET_H + .5, 0), V3(CW, NET_H + .5, 0), V3(0, 2.2, SZ)], 84, 132, 'center');
   }
