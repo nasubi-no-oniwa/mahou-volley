@@ -201,7 +201,7 @@ html[lang=en] .card h1 .pk{margin:.12em 0 0;font-size:.7em}
     <button class="chip" id="backBtn" data-i="back">もどる</button>
     <button class="chip" id="helpBtn" data-i="help" hidden>遊び方</button>
     <div class="chip" id="inkBox" hidden><span data-i="ink">線ののこり</span><div id="ink"><div id="inkFill"></div></div></div>
-    <div class="chip" id="batInfo" hidden><span class="nm" id="biName"></span><span class="cnt"><span data-i="triesL">のこり</span><span class="dots" id="biS"><i></i><i></i><i></i></span><span id="biN"></span></span></div>
+    <div class="chip" id="batInfo" hidden><span class="nm" id="biName"></span><span class="cnt"><span data-i="triesL">のこり</span><span class="dots" id="biS"><i></i></span><span id="biN"></span></span></div>
   </div>
   <div id="msg" hidden><div id="msgBig"></div><div id="msgSub"></div></div>
   <div id="hint" hidden></div>
@@ -357,12 +357,12 @@ const TX = {
     codeTitle: '合言葉で受ける', codeBad: '8文字で入れてね', notFound: 'その合言葉の魔球は見つかりません', loading: '読みこみ中…', netFail: 'つながりませんでした',
     preFrom: '魔球', tries: '挑戦', hits: '上げられた', avg: 'レシーブ率', kCol: 'エース', triesL: 'のこり',
     preNone: 'まだだれも挑戦していません。あなたが最初の相手です', mineNote: '自分の魔球なので記録されません', doneNote2: 'この魔球にはもう挑戦ずみなので、記録されません',
-    how1: '画面のどこでも指を置いて動かすと、その向きへ走る', how2: '右下のボタンでフライング。ボールが体のどこかに当たればレシーブ成功', how3: '3本のうち1本でも上げれば勝ち',
+    how1: '画面のどこでも指を置いて動かすと、その向きへ走る', how2: '右下のボタンでフライング。ボールが体のどこかに当たればレシーブ成功', how3: '1本勝負。上げれば勝ち、エースなら負け', oneShot: '1本勝負',
     ready: 'かまえて…', pitchN: '{n}本目', dive: 'フライング',
     padSw: '指を置いて動かすと走る！', padIdle: '指を置いて動かすと走る', padHold: '', padTut: 'いいね！ その調子', help: '遊び方',
     tut1: '練習：画面に指を置いて、動かしてみよう。その向きへ走ります。右下のボタンでフライング', tut2: '練習の1本（ゆっくり・アンダー）。落ちる所へ走って、体に当てよう', tutNow: 'いま！', tutOk: 'できた！ 本番いくよ', tutAgain: 'おしい！ もう1本練習', tutGo: '本番！', practice: '練習',
     ret: 'レシーブ！', ace: 'サービスエース…', far: 'あと {d}m', wasSpin: 'この魔球は {s}',
-    win: '上げた！', lose: 'エースを取られた…', winSub: '魔球「{n}」をレシーブした', loseSub: '魔球「{n}」に3本ともエースを取られた',
+    win: '上げた！', lose: 'エースを取られた…', winSub: '魔球「{n}」をレシーブした', loseSub: '魔球「{n}」にエースを取られた',
     next: 'ほかの魔球を受ける', again: 'もう一回',
     shareP: '魔球サーブ「{n}」を作った。\n上げられるものなら上げてみろ。\n合言葉：{c}',
     shareW: '魔球サーブ「{n}」をレシーブした！\n合言葉：{c}',
@@ -394,12 +394,12 @@ const TX = {
     codeTitle: 'Receive with a code', codeBad: 'Enter 8 characters', notFound: 'No serve found for that code', loading: 'Loading…', netFail: "Couldn't connect",
     preFrom: 'Magic serve', tries: 'Faced', hits: 'Received', avg: 'Receive %', kCol: 'Aces', triesL: 'Left',
     preNone: 'Nobody has faced it yet. You are the first', mineNote: "It's your own serve, so it isn't recorded", doneNote2: "You already faced this serve, so it isn't recorded",
-    how1: 'Put a finger anywhere and slide it to run that way', how2: 'Dive with the button at the bottom right. If the ball touches any part of your body, you received it', how3: 'Receive 1 of 3 to win',
+    how1: 'Put a finger anywhere and slide it to run that way', how2: 'Dive with the button at the bottom right. If the ball touches any part of your body, you received it', how3: 'One serve only. Receive it to win, get aced and you lose', oneShot: 'One serve',
     ready: 'Get ready…', pitchN: 'Serve {n}', dive: 'Dive',
     padSw: 'Slide a finger to run!', padIdle: 'Slide a finger to run', padHold: '', padTut: 'Nice! Keep it up', help: 'How to play',
     tut1: 'Practice: put a finger on the screen and slide it. You run that way. Dive with the button at the bottom right', tut2: 'Practice serve (slow underhand). Run to where it lands and get it on your body', tutNow: 'NOW!', tutOk: 'Got it! Here comes the real one', tutAgain: 'Close! One more practice serve', tutGo: "Let's go!", practice: 'Practice',
     ret: 'Received!', ace: 'Service ace…', far: '{d} m short', wasSpin: 'It was {s}',
-    win: 'Received!', lose: 'Aced…', winSub: 'You received the magic serve "{n}"', loseSub: 'The magic serve "{n}" aced you all 3 times',
+    win: 'Received!', lose: 'Aced…', winSub: 'You received the magic serve "{n}"', loseSub: 'The magic serve "{n}" aced you',
     next: 'Receive another serve', again: 'Again',
     shareP: 'I made a magic serve: "{n}".\nReceive it if you can.\nCode: {c}',
     shareW: 'I received the magic serve "{n}"!\nCode: {c}',
@@ -431,12 +431,12 @@ const TX = {
     codeTitle: '用暗號接球', codeBad: '請輸入8個字', notFound: '找不到這個暗號的魔球', loading: '讀取中…', netFail: '無法連線',
     preFrom: '魔球', tries: '挑戰', hits: '被接起', avg: '接球率', kCol: '發球得分', triesL: '剩餘',
     preNone: '還沒有人挑戰過。你是第一位對手', mineNote: '這是你自己的魔球，所以不記錄', doneNote2: '你已經挑戰過這顆魔球，所以不記錄',
-    how1: '在畫面任何地方放上手指並移動，就會往那個方向跑', how2: '用右下的按鈕魚躍救球。球碰到身體任何部位就算接起', how3: '3球中接起1球就贏了',
+    how1: '在畫面任何地方放上手指並移動，就會往那個方向跑', how2: '用右下的按鈕魚躍救球。球碰到身體任何部位就算接起', how3: '一球定勝負。接起就贏，被發球得分就輸', oneShot: '一球定勝負',
     ready: '準備…', pitchN: '第{n}球', dive: '魚躍',
     padSw: '放上手指移動就會跑！', padIdle: '放上手指移動就會跑', padHold: '', padTut: '很好！保持下去', help: '玩法',
     tut1: '練習：在畫面放上手指移動看看。會往那個方向跑。右下的按鈕是魚躍救球', tut2: '練習球（慢速・下手）。跑到落點，用身體接住', tutNow: '就是現在！', tutOk: '成功！正式開始', tutAgain: '可惜！再練習1球', tutGo: '正式開始！', practice: '練習',
     ret: '接起來了！', ace: '發球得分…', far: '還差 {d}m', wasSpin: '這顆魔球是 {s}',
-    win: '接起來了！', lose: '被發球得分了…', winSub: '接起了魔球「{n}」', loseSub: '被魔球「{n}」連續發球得分3次',
+    win: '接起來了！', lose: '被發球得分了…', winSub: '接起了魔球「{n}」', loseSub: '被魔球「{n}」發球得分了',
     next: '接其他魔球', again: '再一次',
     shareP: '我做了魔球發球「{n}」。\n有本事就接起來看看。\n暗號：{c}',
     shareW: '我接起了魔球發球「{n}」！\n暗號：{c}',
@@ -468,12 +468,12 @@ const TX = {
     codeTitle: '암호로 받기', codeBad: '8글자로 넣어 줘', notFound: '그 암호의 마구를 찾을 수 없어요', loading: '불러오는 중…', netFail: '연결하지 못했어요',
     preFrom: '마구', tries: '도전', hits: '리시브당함', avg: '리시브율', kCol: '에이스', triesL: '남은',
     preNone: '아직 아무도 도전하지 않았어요. 당신이 첫 상대', mineNote: '자기 마구라서 기록되지 않아요', doneNote2: '이미 도전한 마구라서 기록되지 않아요',
-    how1: '화면 아무 데나 손가락을 대고 움직이면 그쪽으로 달린다', how2: '오른쪽 아래 버튼으로 플라잉. 공이 몸 어디든 닿으면 리시브 성공', how3: '3개 중 1개라도 올리면 승리',
+    how1: '화면 아무 데나 손가락을 대고 움직이면 그쪽으로 달린다', how2: '오른쪽 아래 버튼으로 플라잉. 공이 몸 어디든 닿으면 리시브 성공', how3: '한 번 승부. 올리면 승리, 에이스면 패배', oneShot: '한 번 승부',
     ready: '준비…', pitchN: '{n}번째', dive: '플라잉',
     padSw: '손가락을 대고 움직이면 달린다!', padIdle: '손가락을 대고 움직이면 달린다', padHold: '', padTut: '좋아! 그 느낌', help: '하는 법',
     tut1: '연습: 화면에 손가락을 대고 움직여 봐. 그쪽으로 달린다. 오른쪽 아래 버튼은 플라잉', tut2: '연습 1개(느리게・언더). 떨어지는 곳으로 달려가 몸에 맞히자', tutNow: '지금!', tutOk: '성공! 실전 간다', tutAgain: '아깝다! 1개 더 연습', tutGo: '실전!', practice: '연습',
     ret: '리시브!', ace: '서브 에이스…', far: '{d}m 모자랐다', wasSpin: '이 마구는 {s}',
-    win: '올렸다!', lose: '에이스를 당했다…', winSub: '마구 「{n}」을 리시브했다', loseSub: '마구 「{n}」에 3번 다 에이스를 당했다',
+    win: '올렸다!', lose: '에이스를 당했다…', winSub: '마구 「{n}」을 리시브했다', loseSub: '마구 「{n}」에 에이스를 당했다',
     next: '다른 마구 받기', again: '한 번 더',
     shareP: '마구 서브 「{n}」을 만들었다.\n올릴 수 있으면 올려 봐.\n암호: {c}',
     shareW: '마구 서브 「{n}」을 리시브했다!\n암호: {c}',
@@ -1414,8 +1414,8 @@ function receive(S) {
 const BAT = { ball: null, P: null, code: '', n: 0, over: false, counted: false, result: null, practice: false, lost: 0, tut: 0 };
 function batUI() {
   $('#biName').textContent = BAT.ball ? BAT.ball.n : '';
-  [...$('#biS').children].forEach((d, i) => d.classList.toggle('on', i < 3 - BAT.lost));
-  $('#biN').textContent = BAT.tut ? tr('practice') : tr('pitchN', { n: Math.max(1, BAT.n) }) + ' ・ ' + tr('kmh', { v: BAT.ball && BAT.ball.kmh || 70 });
+  [...$('#biS').children].forEach((d, i) => d.classList.toggle('on', i < 1 - BAT.lost));
+  $('#biN').textContent = BAT.tut ? tr('practice') : tr('oneShot') + ' ・ ' + tr('kmh', { v: BAT.ball && BAT.ball.kmh || 70 });
 }
 function updatePad() {
   const pad = $('#pad');
@@ -1523,7 +1523,7 @@ function judge(S, res) {
   hint('');
   if (BAT.tut === 2) return;
   if (res === 'rec') BAT.over = 'win';
-  else { BAT.lost++; if (BAT.lost >= 3) BAT.over = 'lose'; }
+  else { BAT.lost++; BAT.over = 'lose'; } // 1本勝負
   batUI();
 }
 function afterPitch() {
